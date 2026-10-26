@@ -1,13 +1,14 @@
+
 # Generated static site (run `python3 build.py` to regenerate)
-site/
-
 # OS cruft
-.DS_Store
-Thumbs.db
-
 # Python
-__pycache__/
 *.pyc
-.venv/
+.DS_Store
 .env
 .env.*
+.venv/
+Thumbs.db
+__pycache__/
+dist/*.tmp
+node_modules/
+site/
