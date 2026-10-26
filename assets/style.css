@@ -1,0 +1,328 @@
+/* The Credit and Debt Calm Guide — warm, calm, print-friendly.
+   Copyright (c) 2026 Asdale Dynamics, LLC — MIT License */
+
+:root {
+  --paper: #f9f7f1;
+  --card: #ffffff;
+  --ink: #333330;
+  --ink-soft: #6d6660;
+  --accent: #2f6b5f;
+  --accent-soft: #d7e8e1;
+  --sage: #55683f;
+  --sage-soft: #e9ecdd;
+  --line: #e0dbcf;
+  --code-bg: #f0ede4;
+  --warn-soft: #f6ecd9;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.wrap {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--sage); }
+
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+}
+
+code {
+  background: var(--code-bg);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  overflow-x: auto;
+  line-height: 1.55;
+}
+
+pre code { background: none; padding: 0; }
+
+/* ---------- Figure / diagram ---------- */
+
+article img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+figure {
+  margin: 1.6rem 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+figure svg, figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+figcaption {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin-top: 0.6rem;
+  font-style: italic;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  border-bottom: 3px double var(--line);
+  padding: 2.2rem 0 1.4rem;
+  margin-bottom: 1.6rem;
+}
+
+.site-header .kicker {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 0.5rem;
+}
+
+.site-title {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0 0 0.35rem;
+}
+
+.site-title a { color: var(--ink); text-decoration: none; }
+
+.tagline {
+  margin: 0;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* ---------- Navigation ---------- */
+
+.site-nav {
+  margin: 1.4rem 0 2rem;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.site-nav a {
+  display: inline-block;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.28rem 0.85rem;
+  font-size: 0.88rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+
+.site-nav a:hover { color: var(--accent); border-color: var(--accent-soft); }
+
+.site-nav a[aria-current="page"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fdfcf8;
+}
+
+/* ---------- Article ---------- */
+
+article h1 {
+  font-size: 1.9rem;
+  line-height: 1.25;
+  margin: 0 0 1rem;
+}
+
+article h2 {
+  font-size: 1.35rem;
+  margin: 2.2rem 0 0.6rem;
+  padding-top: 0.4rem;
+}
+
+article h3 {
+  font-size: 1.12rem;
+  margin: 1.7rem 0 0.4rem;
+}
+
+article p, article ul, article ol { margin-bottom: 1rem; }
+
+article ul, article ol { padding-left: 1.5rem; }
+
+article li { margin-bottom: 0.4rem; }
+
+article li.task { list-style: none; margin-left: -1.4rem; padding-left: 1.4rem; }
+
+article li.task input[type="checkbox"] {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.45rem;
+  accent-color: var(--accent);
+}
+
+article li ul, article li ol { margin-top: 0.4rem; }
+
+blockquote {
+  margin: 1.4rem 0;
+  padding: 0.85rem 1.1rem;
+  background: var(--sage-soft);
+  border-left: 4px solid var(--sage);
+  border-radius: 0 10px 10px 0;
+}
+
+blockquote p { margin: 0; }
+
+blockquote.warn {
+  background: var(--warn-soft);
+  border-left-color: #b3852f;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 2.2rem 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.2rem 0;
+  font-size: 0.95rem;
+  background: var(--card);
+}
+
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th { background: var(--accent-soft); }
+
+.meta-line {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Blank fill-in rows on worksheets stay visible when printed. */
+td.blank { min-width: 6rem; height: 1.8rem; }
+
+/* ---------- Previous / next ---------- */
+
+.prevnext {
+  display: flex;
+  gap: 0.8rem;
+  margin: 2.6rem 0 0;
+}
+
+.prevnext a {
+  flex: 1;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.prevnext a:hover { border-color: var(--accent); }
+
+.prevnext .dir {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.prevnext .next { text-align: right; margin-left: auto; }
+
+/* ---------- Print helpers ---------- */
+
+.print-row { margin: 1.2rem 0; }
+
+.print-button {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  background: var(--accent);
+  color: #fdfcf8;
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1.3rem;
+  cursor: pointer;
+}
+
+.print-button:hover { background: var(--sage); }
+
+.hint {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  margin-left: 0.6rem;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 3px double var(--line);
+  margin-top: 3rem;
+  padding: 1.6rem 0 2.4rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.site-footer p { margin: 0 0 0.4rem; }
+
+/* ---------- Print ---------- */
+
+@media print {
+  body { background: #ffffff; font-size: 11.5pt; color: #000; }
+
+  .wrap { max-width: none; padding: 0; }
+
+  .site-header, .site-nav, .print-row, .prevnext {
+    display: none;
+  }
+
+  .site-footer { margin-top: 1.5rem; padding-top: 0.8rem; border-top: 1px solid #999; color: #444; }
+
+  article h2 { page-break-after: avoid; }
+  blockquote, table, pre { page-break-inside: avoid; }
+
+  a { color: #000; text-decoration: none; }
+}
